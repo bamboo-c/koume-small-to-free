@@ -14,7 +14,7 @@ pagespeed    = require("psi"),
 
 config       = require("./config.js"),
 sources      = config.sources,
-ftpSet       = config.ftp;
+ftpConf       = config.ftp;
 
 // ===== Jade compile ====== //
 gulp.task("jade", function () {
@@ -158,8 +158,8 @@ gulp.task("build", function ( i_cb ) {
 
 // ===== deploy ====== //
 gulp.task("deploy", function() {
-  return gulp.src(rsyncSet.src)
-    .pipe($.rsync(rsyncSet.options));
+  return gulp.src("dist/**")
+    .pipe($.ftp(ftpConf));
 });
 // ===== deploy ====== //
 
