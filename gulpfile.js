@@ -121,11 +121,22 @@ gulp.task("clear", function ( i_done ) {
 });
 // ===== cache clear ====== //
 
+// ===== gzip ====== //
+gulp.task("gzip", function() {
+  gulp.src(sources.js + "*.js")
+    .pipe($.gzip())
+    .pipe(gulp.dest(sources.js));
+  gulp.src(sources.css + "*.css")
+    .pipe($.gzip())
+    .pipe(gulp.dest(sources.css));
+});
+// ===== gzip ====== //
+
 // ===== ftp ====== //
 gulp.task("ftp", function() {
-    return gulp.src("dist/**")
-        .pipe($.ftp(ftpSet))
-        .pipe($.util.noop());
+  return gulp.src("dist/**")
+    .pipe($.ftp(ftpSet))
+    .pipe($.util.noop());
 });
 // ===== ftp ====== //
 

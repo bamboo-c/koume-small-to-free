@@ -33,6 +33,7 @@
     "gulp-watch": "*",
     "gulp-util": "*",
     "gulp-ftp": "*",
+    "gulp-gzip": "*",
     "gulp.spritesmith": "*",
     "inherits": "*",
     "isarray": "*",
