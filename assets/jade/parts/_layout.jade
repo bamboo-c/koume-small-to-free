@@ -1,0 +1,17 @@
+doctype html
+html(lang='ja',dir="ltr",itemscope itemtype="http://schema.org/WebPage")
+  head
+    meta(charset="UTF-8")
+    block title
+    block meta
+      meta(name="description",content="")
+      meta(name="keyword",content="")
+      link(rel="index",href="index.html")
+      link(rel="stylesheet",type="text/css",href="styles/main.css",media="all")
+    include _inc_ogp.jade
+    // if lt IE 10
+      script(src="js/vender/html5shiv.min.js")
+
+  block content
+
+
